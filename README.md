@@ -1,9 +1,4 @@
-# Keep Learning
+# C++ 基础知识
 
-# Dont forget
+整理自 https://github.com/guaguaupup/cpp_interview/blob/main/C%2B%2B.md
 
-## 1. Know how
-
-## 2. Know why
-
-## 3. Can be better?
