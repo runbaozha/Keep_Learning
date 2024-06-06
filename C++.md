@@ -1912,13 +1912,17 @@ if(!result){
 
    子类对象的指针转换成父类对象指针
 
-   以上三个都是隐式转换，最好吧所有隐式转换都用static_cast代替
+   以上三个都是隐式转换，最好把所有隐式转换都用static_cast代替
 
 2. **dynamic_cast**
 
    只用于对象的指针和引用，主要用于执行“安全的向下转型”，因为downcast是不安全的
 
-   dynamic_cast是唯一一个在运行时处理的，因为我们转换后的指针如果请求一块无效的内存的话是会报错的，但是用该强转后会返回null，即转换成功会返回引用或者指针，失败返回null。如果一个引用类型执行了类型转换并且这个转换是不可能的，运行时一个`bad_cast`的异常类型会被抛出：
+   dynamic_cast是唯一一个在运行时处理的，因为我们转换后的指针如果请求一块无效的内存的话是会报错的，但是用该强转后会返回null，即转换成功会返回引用或者指针，失败返回null。如果一个引用类型执行了类型转换并且这个转换是不可能的，运行时一个`bad_cast`的异常类型会被抛出。
+   
+   Base* basePtr = new Derived();
+   Derived* derivedPtr = dynamic_cast<Derived*>(basePtr);
+   在这个例子中，dynamic_cast将basePtr转换为Derived*类型的指针。如果basePtr实际上指向一个Derived对象，那么转换将会成功，derivedPtr将指向同一个对象。如果basePtr实际上指向一个Base对象，那么转换将会失败，derivedPtr将为空。
 
 3. **const_cast**
 

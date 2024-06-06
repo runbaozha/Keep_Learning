@@ -1,7 +1,6 @@
-# 好记性不如烂笔头
-多记录，多写文字是个好习惯
+# Keep Learning
 
-# 不要忘了
+# Dont forget
 
 ## 1. Know how
 
